@@ -55,9 +55,9 @@ const ContractCallVote = () => {
   }
 
   return (
-    <div>
+    <div className="w-full">
       <p>Gebb via Smart Contract</p>
-      <button className="Vote" onClick={() => vote("🍊")}>
+      <button className="Vote" onClick={vote}>
         Gebb
       </button>
     </div>

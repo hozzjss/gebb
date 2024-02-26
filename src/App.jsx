@@ -1,4 +1,5 @@
 import "./App.css";
+import { CheckWL } from "./components/CheckWL";
 import ConnectWallet from "./components/ConnectWallet";
 import ContractCallVote from "./components/ContractCallVote";
 
@@ -10,7 +11,7 @@ function App() {
       </div>
 
       <h2>GEB $WMNO8</h2>
-
+      <CheckWL />
       {/* ConnectWallet file: `./src/components/ConnectWallet.js` */}
       <ConnectWallet />
 
