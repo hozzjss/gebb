@@ -5,7 +5,7 @@ import { userSession } from "../user-session";
 function authenticate() {
   showConnect({
     appDetails: {
-      name: "Stacks React Starter",
+      name: "Gebb",
       icon: window.location.origin + "/wmno.png",
     },
     redirectTo: "/",

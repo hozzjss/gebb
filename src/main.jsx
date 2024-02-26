@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Connect
       authOptions={{
         appDetails: {
-          name: "Stacks React Template",
+          name: "Gebb",
           icon: window.location.origin + "/wmno.png",
         },
         redirectTo: "/",
