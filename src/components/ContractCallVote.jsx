@@ -55,9 +55,11 @@ const ContractCallVote = () => {
   }
 
   return (
-    <div className="w-full">
-      <p>Gebb via Smart Contract</p>
-      <button className="Vote" onClick={vote}>
+    <div className="w-full mt-12">
+      <h2 className="text-center text-xl font-bold mb-2">
+        Gebb via Smart Contract
+      </h2>
+      <button className="mt-4" onClick={vote}>
         Gebb
       </button>
     </div>

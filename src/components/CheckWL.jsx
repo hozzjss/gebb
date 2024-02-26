@@ -1,36 +1,29 @@
-import { validateStacksAddress } from "@stacks/transactions";
-import { useState } from "react";
 import { whiteList } from "../util/isWL";
 
 import { useMemo } from "react";
+import { userSession } from "../user-session";
 
 export function CheckWL() {
-  const [val, setVal] = useState("");
-  const isValid = useMemo(() => validateStacksAddress(val), [val]);
-  const isListed = useMemo(() => {
-    if (isValid) {
-      return whiteList.has(val);
+  const mainnetAddress = useMemo(() => {
+    if (userSession.isUserSignedIn()) {
+      return userSession?.loadUserData()?.profile.stxAddress.mainnet || "";
     }
-  }, [isValid, val]);
+  }, []);
+
+  const isListed = useMemo(() => {
+    if (mainnetAddress) {
+      return whiteList.has(mainnetAddress);
+    }
+  }, [mainnetAddress]);
   return (
     <div className="flex flex-col my-4 w-full">
-      <input
-        type="text"
-        value={val}
-        onChange={(e) => setVal(e.target.value)}
-        placeholder="yo stx address"
-        className="p-1 px-2"
-      />
-      <div className="mt-4">
-        {val && !isValid && <p>invalid address 🤬</p>}
-        {val && isValid ? (
-          <p>
-            {isListed
-              ? "listed gebb once 💜"
-              : "not listed gebb after block 141,017 😢"}
-          </p>
-        ) : null}
-      </div>
+      {mainnetAddress && (
+        <div className="mt-4">
+          {isListed
+            ? "listed gebb once 💜"
+            : "not listed gebb after block 141,017 😢 or choose different wallet"}
+        </div>
+      )}
     </div>
   );
 }

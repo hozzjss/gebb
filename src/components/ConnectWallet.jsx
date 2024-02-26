@@ -23,18 +23,13 @@ function disconnect() {
 const ConnectWallet = () => {
   if (userSession.isUserSignedIn()) {
     return (
-      <div>
-        <button className="Connect" onClick={disconnect}>
-          Disconnect Wallet
-        </button>
-        {/* <p>mainnet: {userSession.loadUserData().profile.stxAddress.mainnet}</p>
-        <p>testnet: {userSession.loadUserData().profile.stxAddress.testnet}</p> */}
-      </div>
+      <button className="w-full" onClick={disconnect}>
+        Disconnect Wallet
+      </button>
     );
   }
-
   return (
-    <button className="Connect" onClick={authenticate}>
+    <button className="w-full" onClick={authenticate}>
       Connect Wallet
     </button>
   );
