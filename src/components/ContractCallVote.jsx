@@ -15,8 +15,8 @@ const fisContractAddress = "SP31596TY1N33159BQCVEC9H16HP0KQ2VTD140157";
 const wmnoContractAddress = "SP32AEEF6WW5Y0NMJ1S8SBSZDAY8R5J32NBZFPKKZ";
 
 const providers = {
-  xverse: window.XverseProviders.StacksProvider,
-  leather: window.LeatherProvider,
+  xverse: window?.XverseProviders?.StacksProvider,
+  leather: window?.LeatherProvider,
 };
 const ContractCallVote = () => {
   const { doContractCall } = useConnect();
@@ -71,20 +71,20 @@ const ContractCallVote = () => {
       <h2 className="text-center text-xl font-bold mb-2">
         Gebb via Smart Contract
       </h2>
-      <button
-        className="mt-4"
-        disabled={!providers.leather}
-        onClick={() => vote("leather")}
-      >
-        Gebb leather
-      </button>
-      <button
-        className="mt-4"
-        disabled={!providers.xverse}
-        onClick={() => vote("xverse")}
-      >
-        Gebb Xverse
-      </button>
+      {!!providers.leather && (
+        <button className="mt-4" onClick={() => vote("leather")}>
+          Gebb leather
+        </button>
+      )}
+      {!!providers.xverse && (
+        <button
+          className="mt-4"
+          disabled={!providers.xverse}
+          onClick={() => vote("xverse")}
+        >
+          Gebb Xverse
+        </button>
+      )}
     </div>
   );
 };
