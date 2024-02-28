@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 
-import { Connect } from "@stacks/connect-react";
+// import { Connect } from "@stacks/connect-react";
 
-import { userSession } from "./user-session";
+// import { userSession } from "./user-session";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Connect
+    {/* <Connect
       authOptions={{
         appDetails: {
           name: "Gebb",
@@ -21,8 +21,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         },
         userSession,
       }}
-    >
-      <App />
-    </Connect>
+    > */}
+    <App />
+    {/* </Connect> */}
   </React.StrictMode>
 );
