@@ -77,12 +77,13 @@ const ContractCallVote = () => {
         </button>
       )}
       {!!providers.xverse && (
-        <button
-          className="mt-4"
-          disabled={!providers.xverse}
-          onClick={() => vote("xverse")}
-        >
+        <button className="mt-4" onClick={() => vote("xverse")}>
           Gebb Xverse
+        </button>
+      )}
+      {!providers.leather && !providers.xverse && (
+        <button className="mt-4" onClick={() => vote()}>
+          Gebb
         </button>
       )}
     </div>
