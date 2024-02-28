@@ -8,7 +8,7 @@ function App() {
       </div>
 
       <h2 className="font-bold text-center text-2xl mt-10">
-        $WMNO8 GOBBED NO MORE GOBBING
+        $WMNO8 GOBBED NO MORE GEBBING
       </h2>
       {/* <CheckWL /> */}
       {/* ConnectWallet file: `./src/components/ConnectWallet.js` */}
